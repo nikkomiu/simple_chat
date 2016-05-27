@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-heading
+    %h2.panel-title= @room.name
+  .panel-body
+    .input-group
+      %input.form-control#new_message_body{type: 'text', placeholder: 'enter message', autofocus: true}
+      .input-group-btn
+        %button.btn.btn-primary#new_message_btn Send
+  .list-group#messages
+    = render @messages
+
+.hidden
+  %input#room_id{type: 'hidden', value: @room.id}
+
+= link_to 'Edit', edit_room_path(@room)
+= link_to 'Back', rooms_path
+
+- content_for :javascript do
+  = javascript_include_tag 'cable', 'data-turbolinks-track': false

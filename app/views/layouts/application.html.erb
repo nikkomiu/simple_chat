@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Chat</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <main class="container-fluid">
+      <div class="col-xs-12">
+        <%= render 'shared/flash' %>
+
+        <%= yield %>
+      </div>
+    </main>
+
+    <%= yield :javascript %>
+  </body>
+</html>
