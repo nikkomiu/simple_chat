@@ -1,24 +1,13 @@
-# README
+# Simple Chat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Ruby on Rails application that was created to learn how to use
+ActionCable and how to make it integrate nicely with Turbolinks.
 
-Things you may want to cover:
+## Version Requirements
 
-* Ruby version
+- Ruby 2.3.1
+- Rails 5
 
-* System dependencies
+# Database Configuration
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application runs on SQLite (due to the testing nature of the app)
