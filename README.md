@@ -8,6 +8,6 @@ ActionCable and how to make it integrate nicely with Turbolinks.
 - Ruby 2.3.1
 - Rails 5
 
-# Database Configuration
+## Database Configuration
 
 The application runs on SQLite (due to the testing nature of the app)
