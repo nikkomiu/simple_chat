@@ -1,6 +1,11 @@
 .panel.panel-default
   .panel-heading
-    %h2.panel-title= @room.name
+    %h2.panel-title.pull-left= @room.name
+    .pull-right
+      = link_to edit_room_path(@room), class: 'btn btn-xs btn-default' do
+        %span.glyphicon.glyphicon-pencil{ title: 'Edit Room', data: { toggle: 'tooltip', placement: 'bottom' } }
+    .clearfix
+  .panel-description-heading= @room.description
   .panel-body
     .input-group
       %input.form-control#new_message_body{type: 'text', placeholder: 'enter message', autofocus: true}
@@ -11,9 +16,6 @@
 
 .hidden
   %input#room_id{type: 'hidden', value: @room.id}
-
-= link_to 'Edit', edit_room_path(@room)
-= link_to 'Back', rooms_path
 
 - content_for :javascript do
   = javascript_include_tag 'cable', 'data-turbolinks-track': false

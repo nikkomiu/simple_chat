@@ -1,0 +1,17 @@
+- if room.errors.any?
+  #error_explanation
+    .panel.panel-danger
+      .panel-heading
+        %h2.panel-title
+          Please correct the
+          = pluralize(room.errors.count, "error")
+          before continuing:
+      %ul.list-group
+        - room.errors.full_messages.each do |message|
+          %li.list-group-item= message
+.form-group
+  = f.label :name
+  = f.text_field :name, class: 'form-control'
+.form-group
+  = f.label :description
+  = f.text_area :description, class: 'form-control'

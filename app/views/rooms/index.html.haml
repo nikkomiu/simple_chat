@@ -1,0 +1,12 @@
+.panel.panel-default
+  .panel-heading
+    %h2.panel-title.pull-left Chat Rooms
+    .pull-right
+      = link_to new_room_path, class: 'btn btn-xs btn-primary' do
+        .glyphicon.glyphicon-plus{ title: 'Create Room', data: { toggle: 'tooltip', placement: 'left' } }
+    .clearfix
+  .list-group
+    - @rooms.each do |room|
+      %a.list-group-item{ href: room_path(room) }
+        .list-group-item-heading= room.name
+        .list-group-item-description= room.description

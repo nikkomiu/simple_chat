@@ -1,0 +1,10 @@
+= form_for(@room) do |f|
+  .panel.panel-default
+    .panel-heading
+      %h2.panel-title New Room
+    .panel-body
+      = render 'form', room: @room, f: f
+    .panel-footer
+      .pull-left= link_to 'Back', @room, class: 'btn btn-default'
+      .pull-right= f.submit class: 'btn btn-primary'
+      .clearfix

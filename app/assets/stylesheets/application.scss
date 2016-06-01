@@ -10,3 +10,43 @@
   height: 5px;
   background-color: green;
 }
+
+.panel-heading {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .panel-title {
+    padding: 10px 0;
+  }
+
+  .btn {
+    margin: 8px 0;
+  }
+}
+
+.panel-description-heading {
+  @extend .panel-heading;
+
+  padding: 10px 15px;
+  color: $gray-light !important;
+}
+
+.list-group-item-description {
+  @extend .list-group-item-text;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.site-header {
+  @extend .page-header;
+
+  margin: 0 0 10px 0;
+  padding: 8px;
+
+  background-color: #eee;
+  border-bottom-color: #ccc;
+
+  font-size: 25px;
+}

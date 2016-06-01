@@ -13,10 +13,14 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+# Use HAML for HTML rendering
+gem 'haml'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 # Use Boostrap for the UI
 gem 'bootstrap-sass', '~> 3.3.6'
+# Use MomentJS to do client side time manipulation
+gem 'momentjs-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -28,10 +32,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-# Use HAML for HTML rendering
-gem 'haml'
-# Use MomentJS to do client side time manipulation
-gem 'momentjs-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
