@@ -1,0 +1,11 @@
+.panel.panel-default
+  .panel-heading
+    %h2.panel-title= @team_folder.name
+  .list-group
+    - if @rooms.any?
+      = render @rooms
+    - else
+      .panel-body
+        .alert.alert-info
+          %b Hey!
+          There are currently no groups here!

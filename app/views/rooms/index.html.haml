@@ -6,7 +6,4 @@
         .glyphicon.glyphicon-plus{ title: 'Create Room', data: { toggle: 'tooltip', placement: 'left' } }
     .clearfix
   .list-group
-    - @rooms.each do |room|
-      %a.list-group-item{ href: room_path(room) }
-        .list-group-item-heading= room.name
-        .list-group-item-description= room.description
+    = render @rooms

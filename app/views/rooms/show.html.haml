@@ -5,7 +5,8 @@
       = link_to edit_room_path(@room), class: 'btn btn-xs btn-default' do
         %span.glyphicon.glyphicon-pencil{ title: 'Edit Room', data: { toggle: 'tooltip', placement: 'bottom' } }
     .clearfix
-  .panel-description-heading= @room.description
+  - if @room.description
+    .panel-description-heading= @room.description
   .panel-body
     .input-group
       %input.form-control#new_message_body{type: 'text', placeholder: 'enter message', autofocus: true}

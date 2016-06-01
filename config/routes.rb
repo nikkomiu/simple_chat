@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'rooms#index'
+  root 'teams#index'
 
+  resources :teams
+  resources :team_folders, path: 'folders'
   resources :rooms
 end
