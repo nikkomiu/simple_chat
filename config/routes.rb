@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :teams
   resources :team_folders, path: 'folders'
-  resources :rooms
+  resources :rooms, except: [:index]
 end
