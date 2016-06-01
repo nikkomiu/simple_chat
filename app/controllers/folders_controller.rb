@@ -1,8 +1,9 @@
-class TeamFoldersController < ApplicationController
+class FoldersController < ApplicationController
   def show
     # Get the rooms along with the folder (the will be needed)
-    @team_folder = TeamFolder.includes(:rooms).find(params[:id])
-    @rooms = @team_folder.rooms
+    @folder = Folder.includes(:rooms, :children).find(params[:id])
+    @folders = @folder.children
+    @rooms = @folder.rooms
   end
 
   private

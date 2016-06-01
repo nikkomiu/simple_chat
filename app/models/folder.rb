@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: team_folders
+# Table name: folders
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -10,8 +10,10 @@
 #  updated_at :datetime         not null
 #
 
-class TeamFolder < ApplicationRecord
+class Folder < ApplicationRecord
+  belongs_to :parent, class_name: 'Folder', required: false
   belongs_to :team
 
+  has_many :children, class_name: 'Folder', foreign_key: 'parent_id'
   has_many :rooms
 end

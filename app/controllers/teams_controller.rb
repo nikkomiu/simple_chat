@@ -6,8 +6,8 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team_folders = @team.team_folders
-    @rooms = @team.rooms.where(team_folder_id: nil)
+    @folders = @team.folders.where(parent: nil)
+    @rooms = @team.rooms.where(folder_id: nil)
   end
 
   private

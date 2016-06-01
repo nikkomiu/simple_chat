@@ -1,5 +1,8 @@
 .panel.panel-default
   .panel-heading
-    %h2.panel-title Teams
+    %h2.panel-title.pull-left Teams
+    = link_to new_team_path, class: 'btn btn-xs btn-primary pull-right' do
+      .glyphicon.glyphicon-plus
+    .clearfix
   .list-group
     = render @teams

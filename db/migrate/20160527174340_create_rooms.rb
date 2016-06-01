@@ -5,7 +5,7 @@ class CreateRooms < ActiveRecord::Migration[5.0]
       t.text :description
 
       t.references :team, foreign_key: true
-      t.references :team_folder, foreign_key: true
+      t.references :folder, foreign_key: true
 
       t.timestamps
     end

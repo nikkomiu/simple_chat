@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20160601164804) do
 
+  create_table "folders", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "parent_id"], name: "index_folders_on_name_and_parent_id", unique: true
+    t.index ["parent_id"], name: "index_folders_on_parent_id"
+    t.index ["team_id"], name: "index_folders_on_team_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "room_id"
@@ -25,21 +36,11 @@ ActiveRecord::Schema.define(version: 20160601164804) do
     t.string   "name"
     t.text     "description"
     t.integer  "team_id"
-    t.integer  "team_folder_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["team_folder_id"], name: "index_rooms_on_team_folder_id"
+    t.integer  "folder_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["folder_id"], name: "index_rooms_on_folder_id"
     t.index ["team_id"], name: "index_rooms_on_team_id"
-  end
-
-  create_table "team_folders", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "parent_id"
-    t.integer  "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["parent_id"], name: "index_team_folders_on_parent_id"
-    t.index ["team_id"], name: "index_team_folders_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|

@@ -10,6 +10,6 @@
 #
 
 class Team < ApplicationRecord
-  has_many :team_folders
+  has_many :folders
   has_many :rooms
 end
