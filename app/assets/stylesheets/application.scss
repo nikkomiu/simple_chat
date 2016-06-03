@@ -3,6 +3,8 @@
  *= require_self
  */
 
+$brand-primary: lighten(#536174, 10%);
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
@@ -24,6 +26,10 @@
   }
 }
 
+.breadcrumb {
+  margin-bottom: 10px;
+}
+
 .panel-description-heading {
   @extend .panel-heading;
 
@@ -39,14 +45,33 @@
   text-overflow: ellipsis;
 }
 
+.alert-solo {
+  @extend .alert;
+
+  margin-bottom: 0;
+}
+
+.c-page-header {
+  @extend .page-header;
+
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  .btn {
+    margin-top: -4px;
+  }
+}
+
 .site-header {
   @extend .page-header;
 
   margin: 0 0 10px 0;
   padding: 8px;
 
-  background-color: #eee;
-  border-bottom-color: #ccc;
+  background-color: lighten($brand-primary, 5%);
+  border-bottom-color: darken($brand-primary, 15%);
+  border-bottom-width: 4px;
+  color: #FFF;
 
   font-size: 25px;
 }

@@ -1,10 +1,11 @@
+= render 'shared/header', name: @current_folder.name
+= render 'shared/breadcrumb', team: @current_folder.team, folders: @folder_list, current: @current_folder
+
 .panel.panel-default
-  .panel-heading
-    %h2.panel-title= @folder.name
   .list-group
     - if @folders.empty? && @rooms.empty?
       .panel-body
-        .alert.alert-info
+        .alert-solo.alert-info
           %b Hey!
           Why not add something to this folder!
     - else

@@ -1,4 +1,4 @@
-= link_to folder, class: 'list-group-item' do
+= link_to team_folder_path(folder.team.path, folder.path), class: 'list-group-item' do
   %h4.list-group-item-heading
     %span.glyphicon.glyphicon-folder-close
     = folder.name

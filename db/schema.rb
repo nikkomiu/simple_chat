@@ -11,43 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601164804) do
+ActiveRecord::Schema.define(version: 20160603183543) do
 
-  create_table "folders", force: :cascade do |t|
+  create_table "folders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "parent_id"
     t.integer  "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name", "parent_id"], name: "index_folders_on_name_and_parent_id", unique: true
-    t.index ["parent_id"], name: "index_folders_on_parent_id"
-    t.index ["team_id"], name: "index_folders_on_team_id"
+    t.string   "path"
+    t.index ["name", "parent_id"], name: "index_folders_on_name_and_parent_id", unique: true, using: :btree
+    t.index ["parent_id"], name: "index_folders_on_parent_id", using: :btree
+    t.index ["team_id"], name: "index_folders_on_team_id", using: :btree
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.text     "body"
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "body",       limit: 65535
     t.integer  "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["room_id"], name: "index_messages_on_room_id", using: :btree
   end
 
-  create_table "rooms", force: :cascade do |t|
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.text     "description"
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "team_id"
     t.integer  "folder_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["folder_id"], name: "index_rooms_on_folder_id"
-    t.index ["team_id"], name: "index_rooms_on_team_id"
+    t.string   "path"
+    t.index ["folder_id"], name: "index_rooms_on_folder_id", using: :btree
+    t.index ["team_id"], name: "index_rooms_on_team_id", using: :btree
   end
 
-  create_table "teams", force: :cascade do |t|
+  create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "path"
   end
 
+  add_foreign_key "folders", "teams"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "rooms", "folders"
+  add_foreign_key "rooms", "teams"
 end

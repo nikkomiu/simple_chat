@@ -1,6 +1,7 @@
+= render 'shared/header', name: @team.name
+= render 'shared/breadcrumb', team: @team
+
 .panel.panel-default
-  .panel-heading
-    %h2.panel-title= @team.name
   .list-group
     = render @folders
     = render @rooms

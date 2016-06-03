@@ -11,6 +11,8 @@
 #
 
 class Folder < ApplicationRecord
+  include Pathable
+
   belongs_to :parent, class_name: 'Folder', required: false
   belongs_to :team
 

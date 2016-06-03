@@ -10,6 +10,8 @@
 #
 
 class Team < ApplicationRecord
+  include Pathable
+
   has_many :folders
   has_many :rooms
 end
