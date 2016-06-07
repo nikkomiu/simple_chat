@@ -10,7 +10,7 @@ $brand-primary: lighten(#536174, 10%);
 
 .turbolinks-progress-bar {
   height: 2px;
-  background-color: $brand-primary;
+  background-color: darken($brand-primary, 10%);
 }
 
 .panel-heading {

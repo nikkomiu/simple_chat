@@ -1,7 +1,7 @@
 %ol.breadcrumb
   - if defined? folders
     %li
-      = link_to team.name, team.path
+      = link_to team.name, team_path(team.path)
     - folders.reverse_each do |f|
       %li
         = link_to f.name, f.path

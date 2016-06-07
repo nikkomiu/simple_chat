@@ -5,6 +5,6 @@
       %span.glyphicon.glyphicon-plus
       %span.caret
     %ul.dropdown-menu
-      %li= link_to 'Folder', new_team_folder_path(params[:team_path] || params[:path])
+      %li= link_to 'Folder', new_team_folder_with_parent_path
       %li= link_to 'Chat Room', new_room_path
   .clearfix
