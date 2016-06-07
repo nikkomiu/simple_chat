@@ -1,0 +1,4 @@
+= f.label :name
+= f.text_field :name, placeholder: 'name', class: 'form-control'
+.hidden
+  = f.hidden_field :parent_name, value: params[:parent]

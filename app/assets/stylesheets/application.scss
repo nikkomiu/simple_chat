@@ -30,6 +30,17 @@ $brand-primary: lighten(#536174, 10%);
   margin-bottom: 10px;
 }
 
+.glyphicon-sm {
+  font-size: 75%;
+}
+
+.btn-danger-outline {
+  @extend .btn-danger;
+
+  background: transparent;
+  color: $brand-danger;
+}
+
 .panel-description-heading {
   @extend .panel-heading;
 

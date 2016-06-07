@@ -1,4 +1,3 @@
 = form_for @folder, url: team_folders_path(@team.path) do |f|
-  = f.text_field :parent_name, value: params[:parent]
-  = f.text_field :name, placeholder: 'name', class: 'form-control'
-  = f.submit 'Create Folder'
+  = render 'form', f: f
+  = f.submit 'Create Folder', class: 'btn btn-primary'
